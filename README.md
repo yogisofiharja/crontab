@@ -1,3 +1,23 @@
+# About this fork
+
+This fork is about adding functionality, that the original, excellent [project](github.com/mileusna/crontab) by [mileusna](github.com/mileusna) does not have yet:
+
+* scheduling jobs on specific timezone
+
+The rest of the README below directly comes from the original [repo](github.com/mileusna/crontab) by [mileusna](github.com/mileusna).
+
+This package use UTC by default. You can set the timezone after initiating cron table.
+
+```go
+ctab := crontab.New()
+loc, err := time.LoadLocation("Asia/Jakarta")
+if err != nil {
+    return err
+}
+
+ctab.SetLocation(loc)
+```
+
 # Go/Golang package for Crontab tickers [![GoDoc](https://godoc.org/github.com/mileusna/crontab?status.svg)](https://godoc.org/github.com/mileusna/crontab)
 
 This package provides crontab tickers to golang apps, supporting crontab-like syntax like `* * * * *` or `*/2 * * * *` etc.
